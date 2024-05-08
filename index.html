@@ -1,0 +1,233 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Small Farsi-English Dictionary</title>
+      <!-- 
+      Interfacename:      dadict
+      Basextable:         dc_pes_eng__publ
+      Websitetitle:       A Small Dictionary of Contemporary Persian
+      Sourcelangname:     Farsi
+      Isolabel (Source):  fa
+      Targetlangname:     English
+      Isolabel (Target):  en
+      Creator:            admin
+      ReleasedOnly:       false
+      ProjectInfoTab:     true
+      LanguageInfoTab:    true
+      HelpTab:            true
+      ImprintTab:         true
+      CharTable:          false
+      LoginTab:           false
+      -->
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <link rel="stylesheet" type="text/css" href="farsidict_dict.css"/>
+
+      <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+      <script type="text/javascript" src="jquery.sha256.min.js"></script>            
+      <script type="text/javascript" src="farsidict_dict_funcs.js"></script>
+      
+   </head>
+   <body>
+      <div class="dvTop">         
+          Small Dictionary of <i style="color:rgb(85, 212, 119);">Contemporary</i> <i style="color:rgb(212, 85, 85);">Persian</i><i style="color:rgb(178, 212, 85);"></i>
+      </div>
+      
+      <div class="dvSiteNav">         
+         
+         <button type="button" id="btnQuery" class="btnInActive">Query</button>
+         <button type="button" id="btnProject" class="btnInActive">Project</button>
+         <button type="button" id="btnLang" class="btnInActive">Language</button>         
+         <button type="button" id="btnHelp" class="btnInActive">Help</button>
+      </div>
+      
+      
+      <div class="dvSiteNavMobile" id="dvSiteNavMobile">
+         <button type="button" id="btnMobileMenu">☰</button>         
+      </div>
+      <div class="dvMobileMenu" id="dvMobileMenu">
+         <button type="button" id="btnQuery1" class="btnInActive">Query</button><br/>
+         <button type="button" id="btnProject1" class="btnInActive">Project</button><br/>
+         <button type="button" id="btnLang1" class="btnInActive">Language</button><br/>
+         <button type="button" id="btnHelp1" class="btnInActive">Help</button><br/>
+      </div>
+      
+      <div class="dvStart" id="dvStart">
+         <div class="dvInnerFrame">        
+           <p class="pStandard">By <i>Charly Moerth</i></p>            
+           <p class="pStandard">Vienna 2023</p>
+         </div>   
+      </div>
+      
+      <div class="dvUser" id="dvUser"><label>User </label><input type="text" id="usr1" value="admin"/><label class="lbPw">PW </label><input type="password" id="pw1" value="admin"/></div>
+
+      <div class="dvInpText" id="dvInpText" style="display: none;">
+         <table class="tbInputFrame">
+            <tr>
+               <td class="tdInputFrameLeft"><img class="imgQuery" src="looking_glass_16.png" alt="Query"/></td>
+               <td class="tdInputFrameMiddle"><input type="text" id="txt1" value="" class="inpText"/></td>
+               <td class="tdInputFrameMiddle"><img class="imgPleaseWait" id="imgPleaseWait" src="balls_in_circle.gif" alt="Query"/></td>
+               <td class="tdInputFrameRight"><input type="submit" id="btnX" class="btnX" value="✕"/></td>
+            </tr>
+            <tr>
+               <td class="tdFieldSelectorLeft"> </td>
+               <td class="tdFieldSelectorRight" colspan="3">
+                  <div id="dvFieldSelect" class="dvFieldSelect">                  
+                     <select id="slFieldSelect" class="slFieldSelect">
+                       <option value="any">Any field (any)</option>
+                       <option value="lem">Farsi (lemma)</option>
+                       <option value="infl">Farsi (inflected forms)</option>
+                       <option value="en">Trans. English</option>
+                       <option value="pos">POS</option>
+                       <option value="dom">Domain</option>
+                       <option value="etymLang">Lang. in etymologies</option>
+                       <option value="etymSrc">Words in etymologies</option>
+                       <option value="examples">Examples</option>
+                    </select>
+                  </div>   
+               </td>
+            </tr>
+         </table>
+
+         <div id="dvWordSelector" class="dvWordSelector">
+            <select size="10" id="slWordSelector">
+               <option></option>
+            </select>
+         </div>
+         
+         <div class="dvKWICs" id="dvKWICs"></div>
+      </div>         
+      
+      
+<div class="dvProject" id="dvProject">
+    <!-- BASIC PROJECT INFORMATION -->
+    <p>This dictionary project has grown out of a university language course. It is highly 
+        experimental in nature. Over the time, it was also used as a test-bed for the development 
+        of the Viennese Lexicographic Editor (VLE) and semi-automatic data acquisition for 
+        digital dictionaries. Recent versions have been edited with dictionary module 
+        of the XML-editor TEI-Enricher  </p>
+
+    <p>The focus in compiling the dictionary has been on contemporary language. In the beginning, all lexical items needed in the classes were entered into the dictionary. Later we started to integrate data not available in other dictionaries. Particular attention has been paid to neologisms such as 'street bump', 'virtual reality', 'hard disk', 'charger' (of a mobile) which can not be found in most of the usually older print dictionaries. For the time being, we do not attempt to achieve anything like a complete coverage.</p>
+  
+  <p>In compiling the dictionary, a corpus of digital isiZulu texts has been used 
+    which was put together from various Internet resources, in particular online newspapers. 
+    A very few contemporary literary works have also been used. The TEI encoded data 
+    has been made searchable via NoSke. In October 2021 the corpus contained 12,727,434 tokens.</p>
+
+    <p>As of 1.10.2023, the published dictionary contained roughly 13.280 lemmata (single and multi-word units) 
+    and 13.000 sample sentences.</p>
+</div>
+
+<div class="dvHelp" id="dvHelp">
+    <p>Through the query interface, you can search for words or groups of words in the dictionary. 
+        By simply entering a word and pressing the ENTER button on your keyboard you will trigger the query. 
+        Results matching your query will be displayed below the input field.</p>
+        
+    <p>Mind that all queries are case sensitive.</p>
+             
+    <p>When you start typing letters in the input field, the preview option will show 
+    you a list of tokens that start with the characters you entered so far.</p>
+
+    <p>It is possible to search in particular fields of the dictionary. Wildcards are applied on the token level. </p>
+    
+    <table class="tbExpl">
+        <tr>
+            <td class="tdExplHead tdFixedWidth">Query String</td>
+            <td class="tdExplHead">Explanation</td>
+            <td class="tdExplHead"></td>
+        </tr>
+        <tr>
+            <td class="tdExpl tdFixedWidth">hamba</td>
+            <td class="tdExpl">Find the string <i>hamba</i></td>
+            <td class="tdExpl"><a href="#" onmousedown="tryIt('hamba', '')">Try it!</a></td></tr>
+    </table>
+    
+    <p>The interface also supports a simple query language. The names for the fields can be found in the field selector under the input control</p>
+    <table class="tbExpl">
+        <tr><td class="tdExpl tdFixedWidth">lem=uhambo</td>
+            <td class="tdExpl">Find the lemma with the string <i>uhambo</i>.</td>
+            <td class="tdExpl"><a href="#" onMouseDown="tryIt('lem=uhambo', '')">Try it!</a></td></tr>
+               
+        <tr><td class="tdExpl">pos=conjunction</td>
+            <td class="tdExpl">Find all <i>conjunctions</i>.</td>
+            <td class="tdExpl"><a href='#' onMouseDown="tryIt('pos=conjunction', '')">Try it!</a></td></tr>
+
+        <tr><td class="tdExpl">dom=kinship term</td>
+            <td class="tdExpl">Find all entries with a domain label <i>kinship term</i>.</td>
+            <td class="tdExpl"><a href='#' onMouseDown="tryIt('dom=kinship term', '')">Try it!</a></td></tr>
+        
+        <tr><td class="tdExpl">dom=botany</td>
+            <td class="tdExpl">Find all entries with a domain label <i>botany</i>.</td>
+            <td class="tdExpl"><a href='#' onMouseDown="tryIt('dom=botany', '')">Try it!</a></td></tr>
+        
+    </table>
+    
+    <p>It is possible to use wildcars in the queries.</p>
+    <table class="tbExpl">
+        <tr>
+            <td class="tdExpl tdFixedWidth">ham.*</td>
+            <td class="tdExpl">All entries with a string <i>ham</i>.</td>
+            <td class="tdExpl"><a href="#" onmousedown="tryIt('ham.*', '')">Try it!</a></td></tr>
+        
+        <tr><td class="tdExpl">infl=hambo.*</td>
+            <td class="tdExpl">Find all inflected forms (e.g. plurals) containing the string <i>hambo</i>.</td>
+            <td class="tdExpl"><a href="#" onMouseDown="tryIt('infl=hambo.*', '')">Try it!</a></td></tr>
+
+        <tr><td class="tdExpl">^ham.*</td>
+            <td class="tdExpl">The circumflex (^) is supposed to anchor the term at the beginning of a token. The query should then yield results conaining `housekeeping´ or `household´ ..</td>
+            <td class="tdExpl"><a href="#" onmousedown="tryIt('^ham.*', '')">Try it!</a></td></tr>            
+
+        <tr><td class="tdExpl">.*yu$</td>
+            <td class="tdExpl">With the dollar sign you can anchor the string at the end of the token.</td>
+            <td class="tdExpl"><a href="#" onMouseDown="tryIt('.*yu$', '')">Try it!</a></td></tr>
+    </table>
+    
+    <p>You can also combine queries.</p>
+    <table class="tbExpl">
+        <tr><td class="tdExpl tdFixedWidth">dom=zoology+lem=^ub.*</td>
+            <td class="tdExpl">All animals starting with the string <i>ub</i>.</td>
+            <td class="tdExpl"><a href="#" onmousedown="tryIt('[dom=zoology]+[lem=^ub.*]', '')">Try it!</a></td></tr>
+        
+        <tr><td class="tdExpl">[pos=adjective]+[lem=an.*]</td>
+            <td class="tdExpl">All adjectives containing the string <i>an</i>.</td>
+            <td class="tdExpl"><a href="#" onmousedown="tryIt('[pos=adjective]+[lem=an.*]', '')">Try it!</a></td></tr>       
+    </table>
+
+    <p>Abbreviations used in the dictionary:</p>
+    <table>
+        <tr>
+            <td>imp.</td>
+            <td><i>imperative</i></td>
+        </tr>
+        <tr>
+            <td>inf.</td>
+            <td><i>infinitive</i></td>
+        </tr>
+        <tr>
+            <td>loc.</td>
+            <td><i>locative</i></td>
+        </tr>
+        <tr>
+            <td>NP</td>
+            <td><i>Nominal phrase</i></td>
+        </tr>
+        <tr>
+            <td>pl.</td>
+            <td><i>plural</i></td>
+        </tr>
+        <tr>
+            <td>sg.</td>
+            <td><i>singular</i></td>
+        </tr>
+        <tr>
+            <td>VP</td>
+            <td><i>Verbal phrase</i> is used for any phrases containing verbs.</td>
+        </tr>
+    </table>
+    
+    <br/><br/>
+</div>
+<footer><a href="https://shared.acdh.oeaw.ac.at/acdh-common-assets/api/imprint.php?serviceID=19936&amp;outputLang=en">Imprint</a>&nbsp;&nbsp;&nbsp;UI&nbsp;Version:&nbsp;@version@&nbsp;&nbsp;&nbsp;Data&nbsp;Version:&nbsp;@data-version@</footer>
+      
+   </body>
+</html>

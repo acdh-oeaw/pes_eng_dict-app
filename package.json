@@ -1,0 +1,13 @@
+{
+    "name": "zulu-app",
+    "version": "1.0.0",
+    "author": "Charly Moerth",
+    "license": "MIT",
+    "engines": {
+        "node": "20.x",
+        "npm": "9.8.x",
+        "jvm": "17",
+        "basex": "10.7",
+        "saxon": "12.3"
+    }
+}
