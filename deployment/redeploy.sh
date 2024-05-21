@@ -81,6 +81,6 @@ else
 git checkout main
 fi
 popd
-./execute-basex-batch.sh deploy-pes_eng_dict-data
+./execute-basex-batch.sh deploy-pes-eng-dict-data
 fi
 #-------------------------------------
