@@ -1,13 +1,13 @@
 #!/bin/bash
-# Run this script to update the Zuludict instance to the latest versions. 
+# Run this script to update the pes_eng_dict instance to the latest versions. 
 # It ...
 # * pulls the current code of the web application from github.
 # * pulls the current content of the web application from github.
 #
-# Note: deploy-zuludict-data.bxs
+# Note: deploy-pes_eng_dict-data.bxs
 # and this file are in the root directory of your basex setup.
-# It assumes Zuludict data is in the zuludict-data directory
-# and that the Zuludict app is in the webapp/zuludict-app directory
+# It assumes pes_eng_dict data is in the pes_eng_dict-data directory
+# and that the pes_eng_dict app is in the webapp/pes_eng_dict-app directory
 
 cd $(dirname $0)
 
@@ -25,9 +25,9 @@ export PASSWORD=$local_password
 
 #------ Update XQuery code -----------
 echo updating BaseX app code
-if [ -d ${BUILD_DIR:-webapp/zuludict-app} ]
+if [ -d ${BUILD_DIR:-webapp/pes_eng_dict-app} ]
 then
-pushd ${BUILD_DIR:-webapp/zuludict-app}
+pushd ${BUILD_DIR:-webapp/pes_eng_dict-app}
 git reset --hard
 git checkout main
 git pull
@@ -49,12 +49,12 @@ fi
 
 #------ Update content data from redmine git repository 
 echo updateing data
-if [ ! -d zuludict-data/.git ]
-then echo "zuludict-data does not exist or is not a git repository"
+if [ ! -d pes_eng_dict-data/.git ]
+then echo "pes_eng_dict-data does not exist or is not a git repository"
 else
-pushd zuludict-data
+pushd pes_eng_dict-data
 git reset --hard
-git checkout master
+git checkout main
 git pull
 ret=$?
 if [ $ret != "0" ]; then exit $ret; fi
@@ -78,9 +78,9 @@ find "$d" -type f -and -name '*.xml' -exec sed -i "s~\(</revisionDesc>\)~$revisi
 done
 find $uipath -type f -and \( -name '*.js' -or -name '*.html' \) -not \( -path './node_modules/*' -or -path './cypress/*' \) -exec sed -i "s~\@data-version@~$dataversion~g" {} \;
 else
-git checkout master
+git checkout main
 fi
 popd
-./execute-basex-batch.sh deploy-zuludict-data
+./execute-basex-batch.sh deploy-pes_eng_dict-data
 fi
 #-------------------------------------

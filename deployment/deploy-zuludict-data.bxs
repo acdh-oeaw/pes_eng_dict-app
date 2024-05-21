@@ -1,5 +1,0 @@
-<commands>
-	<set option="STRIPWS">true</set>
-	<create-db name="dc_zul_eng__publ">../zuludict-data/dc_zul_eng__publ</create-db>
-	<create-db name="dc_zul_eng__publ__ind">../zuludict-data/dc_zul_eng__publ__ind</create-db>
-</commands>
